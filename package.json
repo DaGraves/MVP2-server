@@ -1,0 +1,33 @@
+{
+  "name": "gymnacity-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.2"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha --exit",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grahamwh/gymnacity-api.git"
+  },
+  "author": "Graham Walker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grahamwh/gymnacity-api/issues"
+  },
+  "homepage": "https://github.com/grahamwh/gymnacity-api#readme"
+}

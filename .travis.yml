@@ -1,0 +1,11 @@
+language: node_js
+node_js: node
+services:
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: sAXh3tbJ4Z8i4GsnA5GqdDcW5dC1m9rD18MD5kQLOw/R0WyIHQLjkaiH6/QdN9KtS6F7k2pPCVEyVfCuXepWe1tw62d3cIWNZ1os4CiIdwBmCscnAvJSggDJlhHPT0bzBCYJqanDvCHqmfyFS6fXKMSapTt+G7zlsFyUiCDfZpvmH5yKKYM+9Q/Olx0QEtRv8xrfHehLkQ8jPbs11OfN2vipOxovXqsLcDTRwxVl6VmO0rfm2mG1awZLBupEWr4f2dDwnCBW6/n8as+5vIZ4/Ak0XEyno9njbsS3dBgGZjFc1F+N3X3Eqr7ovLQS+obHqaPU0EmDTa9nU0khQC/ka0py6HdG8RcR2aljLHjDSp/A1SNQ/JQNPhYJsE5pAuVh6vgkF78aKQkmUzP6K+2zzc04cKU4E49PH9mfODTTxZ8d7R7VstlKNq5pxRroVq7MhoW7P/1baIQiEeLCduRqw/XCZehPPLXmyEaQbUD8PgXusOq52eNExRKyWxkXAxTmSwhM7NViogsbg5Pc4i0RVnuRIslvxO145ubWEMXwSpk/R7pztgwY/VCboOsuvjAgXiXH6rMBM3YMx/8+lOVvV0+C93GbyRhX2vAkcWfffeRQyeni4dOUWebrxymJFS6PRgtnzIKpgJZ3fVSmShwVLLgvcXLyMi9UlkCI5QcgQoo=
+  app: murmuring-earth-28698
+  on:
+    repo: grahamwh/gymnacity-api
