@@ -141,13 +141,11 @@ function tearDownDb() {
   describe('new workout POST endpoint', function() {
         it('should create a new workout with correct fields', function() {
             const newWorkout = generateWorkoutData();
-            console.log(`SENT DATA: ${JSON.stringify(newWorkout)}`);
             return chai.request(app)
             .post("/api/workouts")
             .set('Authorization', `Bearer ${token}`)
             .send(newWorkout)
             .then(function(res) {
-                console.log(`RESPONSE: ${JSON.stringify(res.body)}`);
                 expect(res).to.have.status(200);
                 expect(res).to.be.json;
                 expect(res.body).to.be.a('object');
