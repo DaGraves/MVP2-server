@@ -47,7 +47,7 @@ router.post("/", jsonParser, (req, res) => {
 
   Workout
     .create({
-      title: req.body.name,
+      name: req.body.name,
       date: req.body.date,
       liftTime: req.body.liftTime,
       exercises: req.body.exercises,

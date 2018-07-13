@@ -141,25 +141,27 @@ function tearDownDb() {
   describe('new workout POST endpoint', function() {
         it('should create a new workout with correct fields', function() {
             const newWorkout = generateWorkoutData();
+            console.log(`SENT DATA: ${JSON.stringify(newWorkout)}`);
             return chai.request(app)
             .post("/api/workouts")
             .set('Authorization', `Bearer ${token}`)
             .send(newWorkout)
             .then(function(res) {
+                console.log(`RESPONSE: ${JSON.stringify(res.body)}`);
                 expect(res).to.have.status(200);
                 expect(res).to.be.json;
                 expect(res.body).to.be.a('object');
-                // expect(res.body.name).to.equal(newWorkout.name);
-                // expect(res.body.id).to.not.be.null;
-                // expect(res.body.date).to.not.be.null;
-                // expect(res.body.liftTime).to.equal(newWorkout.liftTime);
-                // expect(res.body.exercises.name).to.equal(newWorkout.exercises.name);
-                // expect(res.body.exercises.sets).to.equal(newWorkout.exercises.sets); 
-                // expect(res.body.exercises.reps).to.equal(newWorkout.exercises.reps);
-                // expect(res.body.exercises.weight).to.equal(newWorkout.exercises.weight);
-                // expect(res.body.cardio.type).to.equal(newWorkout.cardio.type);
-                // expect(res.body.cardio.cardioTime).to.equal(newWorkout.cardio.cardioTime);
-                // expect(res.body.caloriesBurned).to.equal(newWorkout.caloriesBurned);     
+                expect(res.body.name).to.equal(newWorkout.name);
+                expect(res.body.id).to.not.be.null;
+                expect(res.body.date).to.not.be.null;
+                expect(res.body.liftTime).to.equal(newWorkout.liftTime);
+                expect(res.body.exercises.name).to.equal(newWorkout.exercises.name);
+                expect(res.body.exercises.sets).to.equal(newWorkout.exercises.sets); 
+                expect(res.body.exercises.reps).to.equal(newWorkout.exercises.reps);
+                expect(res.body.exercises.weight).to.equal(newWorkout.exercises.weight);
+                expect(res.body.cardio.type).to.equal(newWorkout.cardio.type);
+                expect(res.body.cardio.cardioTime).to.equal(newWorkout.cardio.cardioTime);
+                expect(res.body.caloriesBurned).to.equal(newWorkout.caloriesBurned);     
             })
 
         });

@@ -41,7 +41,7 @@ WorkoutSchema.methods.exercise = function(exercise) {
 WorkoutSchema.methods.serialize = function () {
   return {
     id: this._id,
-    workoutName: this.name,
+    name: this.name,
     date: this.formattedDate,
     liftTime: this.liftTime,
     exercises: this.exercises.map(WorkoutSchema.methods.exercise),
