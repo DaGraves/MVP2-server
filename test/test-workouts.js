@@ -29,7 +29,7 @@ function generateWorkoutData() {
         name: faker.lorem.word(),
         date: faker.date.recent(),
         exerciseTime: faker.lorem.word(),
-        type: faker.lorem.word(),
+        exerciseType: faker.lorem.word(),
         notes: faker.lorem.paragraph(),
         caloriesBurned: faker.lorem.word()
     };
@@ -138,7 +138,7 @@ function tearDownDb() {
                 expect(res.body.id).to.not.be.null;
                 expect(res.body.date).to.not.be.null;
                 expect(res.body.exerciseTime).to.equal(newWorkout.exerciseTime);
-                expect(res.body.type).to.equal(newWorkout.type);
+                expect(res.body.exerciseType).to.equal(newWorkout.exerciseType);
                 expect(res.body.notes).to.equal(newWorkout.notes); 
                 expect(res.body.caloriesBurned).to.equal(newWorkout.caloriesBurned);     
             })

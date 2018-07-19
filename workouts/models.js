@@ -9,7 +9,7 @@ const WorkoutSchema = mongoose.Schema({
  name: {type: String},
  date: {type: Date},
  exerciseTime: {type: String},
- type: {type: String},
+ exerciseType: {type: String},
  notes: {type: String},
  caloriesBurned: {type: String}
 });
@@ -26,7 +26,7 @@ WorkoutSchema.methods.serialize = function () {
     name: this.name,
     date: this.formattedDate,
     exerciseTime: this.exerciseTime,
-    type: this.type,
+    exerciseType: this.exerciseType,
     notes: this.notes,
     caloriesBurned: this.caloriesBurned,
   }
