@@ -35,7 +35,7 @@ router.use(jwtAuth);
 //++++++++++++++++++++++++++++++++++++
 
 router.post("/", jsonParser, (req, res) => {
-  const requiredFields = ['name', 'date', 'liftTime', 'exercises', 'cardio', 'caloriesBurned'];
+  const requiredFields = ['name', 'date', 'exerciseTime', 'type', 'notes', 'caloriesBurned'];
   for (let i = 0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!field in req.body) {
@@ -49,12 +49,9 @@ router.post("/", jsonParser, (req, res) => {
     .create({
       name: req.body.name,
       date: req.body.date,
-      liftTime: req.body.liftTime,
-      exercises: req.body.exercises,
-      cardio: {
-        type: req.body.cardio.type,
-        cardioTime: req.body.cardio.cardioTime
-      },
+      exerciseTime: req.body.exerciseTime,
+      type: req.body.type,
+      notes: req.body.notes,
       caloriesBurned: req.body.caloriesBurned
     })
     .then(

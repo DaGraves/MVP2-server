@@ -23,29 +23,14 @@ const firstName = 'Example';
 const lastName = 'User';
 let workoutId = "213123";
 
-function generateExercises() {
-    const exercises = [];
-    for (let i = 1; i <= 3; i++) {
-        exercises.push({
-          name: faker.lorem.word(),
-          sets: faker.lorem.word(),
-          reps: faker.lorem.word(),
-          weights: faker.lorem.word()
-        });
-    }
-    return exercises;
-}
 
 function generateWorkoutData() {
     return {
         name: faker.lorem.word(),
         date: faker.date.recent(),
-        liftTime: faker.lorem.word(),
-        exercises: generateExercises(),
-        cardio: {
-          type: faker.lorem.word(),
-          cardioTime: faker.lorem.word()
-        },
+        exerciseTime: faker.lorem.word(),
+        type: faker.lorem.word(),
+        notes: faker.lorem.paragraph(),
         caloriesBurned: faker.lorem.word()
     };
 }
@@ -152,13 +137,9 @@ function tearDownDb() {
                 expect(res.body.name).to.equal(newWorkout.name);
                 expect(res.body.id).to.not.be.null;
                 expect(res.body.date).to.not.be.null;
-                expect(res.body.liftTime).to.equal(newWorkout.liftTime);
-                expect(res.body.exercises.name).to.equal(newWorkout.exercises.name);
-                expect(res.body.exercises.sets).to.equal(newWorkout.exercises.sets); 
-                expect(res.body.exercises.reps).to.equal(newWorkout.exercises.reps);
-                expect(res.body.exercises.weight).to.equal(newWorkout.exercises.weight);
-                expect(res.body.cardio.type).to.equal(newWorkout.cardio.type);
-                expect(res.body.cardio.cardioTime).to.equal(newWorkout.cardio.cardioTime);
+                expect(res.body.exerciseTime).to.equal(newWorkout.exerciseTime);
+                expect(res.body.type).to.equal(newWorkout.type);
+                expect(res.body.notes).to.equal(newWorkout.notes); 
                 expect(res.body.caloriesBurned).to.equal(newWorkout.caloriesBurned);     
             })
 
