@@ -2,9 +2,10 @@
   "name": "calories-r-gone",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
-  "directories": {
-    "test": "test"
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha --exit"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -25,19 +26,5 @@
     "chai-http": "^3.0.0",
     "faker": "^3.1.0",
     "mocha": "^4.0.1"
-  },
-  "scripts": {
-    "test": "mocha --exit",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/grahamwh/gymnacity-api.git"
-  },
-  "author": "Graham Walker",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/grahamwh/gymnacity-api/issues"
-  },
-  "homepage": "https://github.com/grahamwh/gymnacity-api#readme"
+  }
 }
